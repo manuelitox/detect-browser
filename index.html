@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Detect Browser.</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="detect-browser" class="detect-browser">
+		<p id="title" class="title"></p>
+		<p>Por favor, <a href="#internet-explorer">actualizo</a> o cambia a <a href="#chrome">Chrome</a>, <a href="#firefox">Firefox</a> o <a href="#safari">Safari</a>.</p>
+	</div>
+
+	<script src="oldbrowser.js"></script>
+	<script>
+		var currentBrowser = new OldBrowser(getBrowser());
+		currentBrowser.print();
+	</script>
+</body>
+</html>
