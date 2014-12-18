@@ -37,7 +37,7 @@ OldBrowser.prototype.get = function() {
 OldBrowser.prototype.checkIE = function() {
 	var output;
 
-	if (!isIE(this.name) && !isIE8(this.version)) {
+	if (isIE(this.name) && isIE8(this.version)) {
 		output = "No damos soporte a la version (" + this.version + ") de Internet Explorer.";
 	}
 
@@ -45,7 +45,7 @@ OldBrowser.prototype.checkIE = function() {
 };
 
 OldBrowser.prototype.print = function() {
-	if (!isIE(this.name) && !isIE8(this.version)) {
+	if (isIE(this.name) && isIE8(this.version)) {
 		var wrapped = document.getElementById("detect-browser");
 		wrapped.className += " active";
 		document.getElementById("title").innerHTML = currentBrowser.checkIE();
