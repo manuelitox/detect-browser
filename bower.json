@@ -1,0 +1,14 @@
+{
+  "name": "detect-browser",
+  "version": "0.4",
+  "homepage": "https://github.com/manuelitox/detect-browser",
+  "authors": [
+    "Manuel González hola@manuelitox"
+  ],
+  "description": "Una pequeña librería escrita en Javascript, detecta cual es nuestro navegador y muestra en pantalla una notificación de alerta sí estamos usando Internet Explorer <= 8.",
+  "main": "oldbrowser.js",
+  "keywords": [
+    "javascript"
+  ],
+  "license": "MIT"
+}
