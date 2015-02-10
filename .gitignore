@@ -1,2 +1,5 @@
 /.sass-cache/*
 /scss/*
+/node_modules/*
+Gruntfile.js
+package.json

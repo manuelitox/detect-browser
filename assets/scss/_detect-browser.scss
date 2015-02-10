@@ -1,0 +1,90 @@
+// An easy way to check if list has the value 
+// @param $args (elements list)
+// @param $type (type)
+//
+// has-value($list, $type)
+//
+
+@function has-value($args, $type, $value: '') {
+	@each $arg in $args {
+		@if $arg == $type {
+			$value: $type;
+		}
+	}
+	@return $value;
+}
+
+// Prefixer
+// @param $property ($name);
+// @param $value ($value);
+// @param $prefixes (webkit | moz | ms | o);
+//
+// @include prefixer(animation, $options);
+//
+
+@mixin prefixer($property, $value, $prefixes: webkit moz ms o) {
+  	#{$property}: #{$value};
+  	@each $prefix in $prefixes {
+    	#{'-' + $prefix + '-' + $property}: #{$value};
+  	}
+}
+
+// Transition (defaults to .15 sec)
+// @param $value ($speed | $property | $easing);
+// 
+// @include transition(200ms height ease-out);
+// 
+
+@mixin transition($value: .15s) {
+  	@include prefixer(transition, $value);
+}
+
+// box sizing
+// @param $type (content-box | border-box | initial | inherit);
+//
+// use function has-value.
+// @include box-sizing(border-box);
+//
+
+@mixin box-sizing($type: border-box) {
+
+	$args: content-box, border-box, initial, inherit;
+
+	@if has-value($args, $type) == $type {
+		@include prefixer(box-sizing, $type);
+	} @else {
+		@warn 'Type value (#{$type}) is unknown';
+	}
+
+}
+
+.detect-browser {
+	background-color: map-get($colors, black);
+	color: white;
+	font-family: map-get($fonts, main), sans-serif;
+	line-height: 1.5;
+	padding: 30px;
+	position: relative;
+	text-align: center;
+	@include box-sizing();
+
+	a {
+		color: map-get($colors, green);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}		
+	}
+
+	p {
+		font-size: 20px;
+		margin: 0;
+	}
+
+	.title {
+		font-size: 30px;
+		font-weight: 400;
+		margin: 0 0 10px;
+	}
+}
