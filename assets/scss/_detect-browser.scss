@@ -61,12 +61,17 @@
 .detect-browser {
 	background-color: map-get($colors, black);
 	color: white;
+	display: none;
 	font-family: map-get($fonts, main), sans-serif;
 	line-height: 1.5;
 	padding: 30px;
 	position: relative;
 	text-align: center;
 	@include box-sizing();
+
+	&.active {
+		display: block;
+	}
 
 	a {
 		color: map-get($colors, green);
