@@ -2,11 +2,11 @@
 
 Una pequeña librería escrita en Javascript, detecta cual es nuestro navegador y muestra en pantalla una notificación de alerta sí estamos usando Internet Explorer <= 8.
 
-## Inslatación:
+## Instalación:
 
-* Mediate Github: <code>$ git clone https://github.com/manuelitox/detect-browser.git</code> 
+* Github: <code>$ git clone https://github.com/manuelitox/detect-browser.git</code> 
 
-* Mediate Bower: <code>$ bower install detect-browser</code>
+* Bower: <code>$ bower install detect-browser</code>
 
 ## Cómo usarlo:
 
